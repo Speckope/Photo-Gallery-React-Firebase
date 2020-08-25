@@ -22,5 +22,8 @@ firebase.initializeApp(firebaseConfig);
 const projectStorage = firebase.storage();
 // This is same as above but database
 const projectFirestore = firebase.firestore();
+// Here we create timestamp for firebase. Its special type of data - timestamp!
+// Now when we wont to create new timestamp we evoke this function!
+const timestamp = firebase.firestore.FieldValue.serverTimestamp;
 
-export { projectStorage, projectFirestore };
+export { projectStorage, projectFirestore, timestamp };
