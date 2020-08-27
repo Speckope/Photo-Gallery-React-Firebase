@@ -1,6 +1,7 @@
 import React from 'react';
 import useStorage from '../hooks/useStorage';
 import { useEffect } from 'react';
+import { motion } from 'framer-motion';
 
 // btw we destructure props here!
 const ProgressBar = ({ file, setFile }) => {
@@ -13,7 +14,12 @@ const ProgressBar = ({ file, setFile }) => {
 
   return (
     // We set width of progress bar according to progress we get from firebase!!
-    <div className='progress-bar' style={{ width: progress + '%' }}></div>
+    <motion.div
+      className='progress-bar'
+      initial={{ width: 0 }}
+      // woo so cool.
+      animate={{ width: progress + '%' }}
+    ></motion.div>
   );
 };
 
